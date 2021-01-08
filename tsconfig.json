@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "noImplicitAny": true,
+      "module": "es6",
+      "target": "es6",
+      "jsx": "react",      
+      "moduleResolution": "node",
+      "paths": {
+        "ros-web-vue": ["packages/hello-world-subpackage"]
+      },
+      "declaration": true,
+      "emitDeclarationOnly": true     
+    },
+    "exclude": [        
+        "node_modules"        
+    ],
+    "files": [
+        "./src/main.js"        
+    ],
+    "include": [        
+        "src/**/*.vue",
+        "packages/hello-world-subpackage/**/*"        
+    ]
+}
