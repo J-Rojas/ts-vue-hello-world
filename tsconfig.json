@@ -3,23 +3,24 @@
       "baseUrl": ".",
       "noImplicitAny": true,
       "module": "es6",
+      "outDir": "./dist/",
       "target": "es6",
-      "jsx": "react",      
+      "jsx": "react",     
+      "allowJs": true, 
       "moduleResolution": "node",
       "paths": {
-        "ros-web-vue": ["packages/hello-world-subpackage"]
-      },
+        "hello-world-subpackage": ["./packages/hello-world-subpackage"]
+      },      
       "declaration": true,
-      "emitDeclarationOnly": true     
+      "noEmit": false
     },
-    "exclude": [        
-        "node_modules"        
-    ],
     "files": [
         "./src/main.js"        
     ],
-    "include": [        
-        "src/**/*.vue",
-        "packages/hello-world-subpackage/**/*"        
+    "references": [
+      { "path": "packages/hello-world-subpackage" }      
+    ],
+    "include": [      
+        "src/**/*"        
     ]
 }

@@ -5,13 +5,14 @@ module.exports = {
     configureWebpack: config => {
 
         config.plugins.push(
+            
             new ForkTsCheckerWebpackPlugin({
                 typescript: {
                   extensions: {
                     vue: true
                   }
                 }
-            })            
+            })
         )
 
     },
@@ -23,16 +24,11 @@ module.exports = {
         config.resolve.extensions.add('.ts')
         
         config.module.rule('babel-ts')
-        .include.add(/src/).end()
-        .include.add(/node_modules\/hello-world-subpackage/).end()
-        //.exclude.add(/node_modules/).end()
         .test(/\.ts$/)
         .use('babel-loader')
         .loader('babel-loader')
         
-        config.module.rule('eslint-ts')
-        .include.add(/src/).end()
-        .include.add(/node_modules\/hello-world-subpackage/).end()
+        config.module.rule('eslint')
         .enforce('pre')
         .test(/\.ts$/)
         .use('eslint-loader')
@@ -44,13 +40,12 @@ module.exports = {
         })
                 
         config.module.rule('ts')
-        .include.add(/src/).end()
-        .include.add(/node_modules\/hello-world-subpackage/).end()
         .test(/\.ts$/)
         .use('ts-loader')
         .loader('ts-loader')
         .options({ 
-            transpileOnly: true 
+            transpileOnly: true,
+            projectReferences: true
         })
     
     }
