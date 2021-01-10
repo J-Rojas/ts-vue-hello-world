@@ -4,7 +4,7 @@ export class Foo {
         console.log("bar!")
     }
 
-    baf() {
+    baz() {
         console.log("baz!")
     }
 
