@@ -4,10 +4,8 @@ export class Foo {
         console.log("bar!")
     }
 
-    /*
-    baz() {
+    baf() {
         console.log("baz!")
     }
-    */
 
 }
